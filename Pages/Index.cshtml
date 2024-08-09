@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@using Microsoft.AspNetCore.Identity
+@using StrangersChat2.Models
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    ViewData["Title"] = "Home page";
+
+    // Determine if the user is logged in
+    var isLoggedIn = SignInManager.IsSignedIn(User);
+}
+
+@if (isLoggedIn)
+{
+    <script>
+        //Redirect to HomePageAfterLogin if the user is logged in
+        window.location.href = '@Url.Page("/HomePageAfterLogin")';
+    </script>
+}
+else
+{
+    <div class="text-center">
+        <h1 class="display-4"><strong>Welcome to Strangers Chat</strong></h1>
+        <img src="~/images/strangerchatimage.jpg" alt="strangerchatimage.jpg" class="img-fluid mt-4">
+        <p class="mt-4">Click on login to proceed...</p>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </div>
+}
