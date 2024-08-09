@@ -1,0 +1,30 @@
+﻿@page
+@model StrangersChat2.Areas.Identity.Pages.Account.ChatPageModel
+@{
+    ViewData["Title"] = "Chat Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/Chat.css" asp-append-version="true" />
+    <script src="~/js/signalr.min.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <div id="messagesList"></div>
+        <div class="message-input">
+            <input type="text" id="messageInput" placeholder="Type a message..." />
+            <button id="sendButton">Send</button>
+            <button id="endChatButton">End Chat</button>
+            <button id="endChatButton">Refresh</button>
+
+        </div>
+    </div>
+
+    <script src="~/js/Chat.js" asp-append-version="true"></script>
+</body>
+</html>
